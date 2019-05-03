@@ -7,8 +7,8 @@ import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.animation.AnimationTimer;
 public class Main extends Application {
-    private static int count;
-    AnimationTimer at;
+    public static int count=15;
+    private AnimationTimer at;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -20,15 +20,18 @@ public class Main extends Application {
             at=new AnimationTimer() {
                 @Override
                 public void handle(long now) {
-                    Controller.ctn.draw();
+                    for(AnimalContainer t:Model.containers)t.draw();
+                    if(Model.isAllFinished())stop();
                 }
-            };
-           Controller.ctn.start();
-           at.start();
+             };
+            Controller.init();
+            Controller.start();
+            at.start();
+
         });
         root.getChildren().add(btn);
         primaryStage.setTitle("cockroach runners");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 900, 875));
         primaryStage.show();
     }
 
