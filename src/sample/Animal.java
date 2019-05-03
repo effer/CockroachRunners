@@ -5,4 +5,5 @@ public interface Animal {
     int getY();
     int getDelay();
     String getName();
+    public void setX(int x);
 }

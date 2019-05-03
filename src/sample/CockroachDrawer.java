@@ -2,9 +2,9 @@ package sample;
 import javafx.scene.Group;
 import javafx.scene.shape.Ellipse;
 public class CockroachDrawer extends AbstractAnimalDrawer {
-    protected Ellipse el=new Ellipse(0,0);
-    public CockroachDrawer(Group group){
-        super(group);
+    protected Ellipse el=new Ellipse();
+    public CockroachDrawer(){
+        root.getChildren().add(this.el);
     }
 
     public void draw(Animal animal){

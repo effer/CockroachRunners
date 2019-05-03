@@ -11,7 +11,10 @@ abstract public class AbstractAnimalContainer implements AnimalContainer {
     abstract public void run();
     public void start(){
         this.running=true;
-        thread=new Thread(this);
+        if(thread==null){
+            thread=new Thread(this);
+            thread.start();
+        }
     }
     abstract public void boost();
     public void draw(){
