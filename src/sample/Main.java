@@ -9,27 +9,40 @@ import javafx.animation.AnimationTimer;
 public class Main extends Application {
     public static int count=15;
     private AnimationTimer at;
+    public static Group root=new Group();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Group root=new Group();
         CockroachDrawer.setContext(root);
 
-        Button btn=new Button("TEST");
+        Button btn=new Button("Create");
+        Button startBtn=new Button("start");
+        Button abort=new Button("abort");
+        abort.setLayoutX(220);
+        startBtn.setLayoutX(150);
+        startBtn.setOnAction(event->{
+
+            Controller.start();
+        });
         btn.setOnAction(event->{
+
+            Controller.init();
             at=new AnimationTimer() {
                 @Override
                 public void handle(long now) {
-                    View.draw();
                     if(Model.isAllFinished())stop();
+                    View.draw();
                 }
-             };
-            Controller.init();
-            Controller.start();
+            };
             at.start();
 
         });
+        abort.setOnAction(event->{
+            Controller.abort();
+        });
         root.getChildren().add(btn);
+        root.getChildren().add(startBtn);
+        root.getChildren().add(abort);
         primaryStage.setTitle("cockroach runners");
         primaryStage.setScene(new Scene(root, 900, 875));
         primaryStage.show();

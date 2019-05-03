@@ -10,5 +10,8 @@ public class Controller {
     public static void start(){
         for(AnimalContainer t:Model.containers) t.start();
     }
+    public static void abort(){
+        for(AnimalContainer t:Model.containers)t.abort();
+    }
 
 }

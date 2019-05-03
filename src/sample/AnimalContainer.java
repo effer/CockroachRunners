@@ -7,4 +7,6 @@ public interface AnimalContainer extends Runnable{
     public boolean isRunning();
     public boolean isFinished();
     public void draw();
+    public Animal getAnimal();
+    public void abort();
 }

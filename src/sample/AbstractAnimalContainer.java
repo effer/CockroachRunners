@@ -22,4 +22,9 @@ abstract public class AbstractAnimalContainer implements AnimalContainer {
     }
     public boolean isFinished(){return this.finished;}
     public boolean isRunning(){return this.running;}
+    public Animal getAnimal(){return this.animal;}
+    public void abort(){
+        this.finished=true;
+        this.animal.setX(0);
+    }
 }

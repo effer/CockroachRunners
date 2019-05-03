@@ -8,8 +8,7 @@ public class CockroachContainer extends AbstractAnimalContainer {
         this.step=1;
     }
     public void run(){
-        this.finished=false;
-        while(this.animal.getX()<this.distance){
+        while((this.animal.getX()<this.distance)&&!this.finished){
             if(this.animal.getX()+this.step<this.distance)this.animal.setX(this.animal.getX()+this.step);
             else this.animal.setX(this.distance);
             try{
