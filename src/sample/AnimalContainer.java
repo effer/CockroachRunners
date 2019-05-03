@@ -5,4 +5,5 @@ public interface AnimalContainer extends Runnable{
     public void start();
     public void reset();
     public void boost();
+    public boolean isRunning();
 }

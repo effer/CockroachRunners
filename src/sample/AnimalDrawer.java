@@ -1,5 +1,5 @@
 package sample;
 
 public interface AnimalDrawer {
-    public void Draw();
+    public void draw(Animal animal);
 }
