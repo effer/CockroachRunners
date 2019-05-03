@@ -3,7 +3,8 @@ package sample;
 public interface AnimalContainer extends Runnable{
     public void run();
     public void start();
-    public void reset();
     public void boost();
     public boolean isRunning();
+    public boolean isFinished();
+    public void draw();
 }
