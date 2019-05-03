@@ -4,4 +4,5 @@ public interface Animal {
     int getX();
     int getY();
     int getDelay();
+    String getName();
 }
