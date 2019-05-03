@@ -20,7 +20,7 @@ public class Main extends Application {
             at=new AnimationTimer() {
                 @Override
                 public void handle(long now) {
-                    for(AnimalContainer t:Model.containers)t.draw();
+                    View.draw();
                     if(Model.isAllFinished())stop();
                 }
              };
@@ -37,11 +37,11 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-     /*   try{count=Integer.parseInt(args[0]);}
+        try{count=Integer.parseInt(args[0]);}
         catch(Exception ex){
             System.out.println("Nado vvesti chislo");
         }
-        if(count==0)System.exit(0);*/
+        if(count==0)System.exit(0);
         launch(args);
     }
 }

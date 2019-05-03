@@ -1,5 +1,4 @@
 package sample;
-import javafx.scene.Group;
 import javafx.scene.shape.Ellipse;
 public class CockroachDrawer extends AbstractAnimalDrawer {
     protected Ellipse el=new Ellipse();
