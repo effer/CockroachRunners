@@ -27,4 +27,5 @@ abstract public class AbstractAnimalContainer implements AnimalContainer {
         this.finished=true;
         this.drawer.abort();
     }
+
 }

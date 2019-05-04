@@ -13,27 +13,42 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         CockroachDrawer.setContext(root);
-
+        Controller.init();
+        at=new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                if(Model.isAllFinished()){
+                    stop();
+                    Model.abortFlag=false;
+                    Controller.printResult();
+                }
+                View.draw();
+            }
+        };
+        at.start();
         Button btn=new Button("Create");
         Button startBtn=new Button("start");
         startBtn.setLayoutX(150);
         startBtn.setOnAction(event->{
-
+            System.out.println("старт");
             Controller.start();
+            Model.abortFlag=true;
         });
         btn.setOnAction(event->{
-            if(Model.abortFlag){
-                Controller.abort();
 
-            }
+            if(Model.abortFlag)System.out.println("забег прерван");
             Controller.init();
-            at=new AnimationTimer() {
+        /*    at=new AnimationTimer() {
                 @Override
                 public void handle(long now) {
-                    if(Model.isAllFinished())stop();
+                    if(Model.isAllFinished()){
+                        stop();
+                        Model.abortFlag=false;
+                        Controller.printResult();
+                    }
                     View.draw();
                 }
-            };
+            };*/
             at.start();
 
         });

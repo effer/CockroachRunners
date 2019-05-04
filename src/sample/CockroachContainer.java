@@ -5,7 +5,7 @@ public class CockroachContainer extends AbstractAnimalContainer {
         this.animal=animal;
         this.drawer=new CockroachDrawer();
         this.distance=500;
-        this.step=1;
+        this.step=2;
     }
     public void run(){
         while((this.animal.getX()<this.distance)&&!this.finished){

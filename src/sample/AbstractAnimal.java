@@ -15,4 +15,7 @@ abstract public class AbstractAnimal implements Animal{
         this.delay=delay;
         this.name=name;
     }
+    public void setName(String name){
+        this.name=name;
+    }
 }
