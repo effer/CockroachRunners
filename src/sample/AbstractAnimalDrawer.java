@@ -7,4 +7,5 @@ abstract public class AbstractAnimalDrawer implements AnimalDrawer{
     public static void setContext(Group group){
         root=group;
     }
+    abstract public void abort();
 }

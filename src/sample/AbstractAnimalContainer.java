@@ -25,6 +25,6 @@ abstract public class AbstractAnimalContainer implements AnimalContainer {
     public Animal getAnimal(){return this.animal;}
     public void abort(){
         this.finished=true;
-        this.animal.setX(0);
+        this.drawer.abort();
     }
 }

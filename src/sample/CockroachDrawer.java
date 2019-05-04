@@ -12,4 +12,7 @@ public class CockroachDrawer extends AbstractAnimalDrawer {
         el.setRadiusX(20);
         el.setRadiusY(15);
     }
+    public void abort(){
+        root.getChildren().remove(this.el);
+    }
 }

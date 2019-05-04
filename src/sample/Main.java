@@ -40,6 +40,7 @@ public class Main extends Application {
         abort.setOnAction(event->{
             Controller.abort();
         });
+
         root.getChildren().add(btn);
         root.getChildren().add(startBtn);
         root.getChildren().add(abort);
@@ -50,6 +51,10 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        if(args.length<1){
+            System.out.println("nuzhen argument");
+            System.exit(0);
+        }
         try{count=Integer.parseInt(args[0]);}
         catch(Exception ex){
             System.out.println("Nado vvesti chislo");
