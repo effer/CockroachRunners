@@ -7,10 +7,10 @@ public class CockroachDrawer extends AbstractAnimalDrawer {
     }
 
     public void draw(Animal animal){
-        el.setCenterX(animal.getX()+20);
+        el.setCenterX(animal.getX()+120);
         el.setCenterY(animal.getY()+50);;
         el.setRadiusX(20);
-        el.setRadiusY(15);
+        el.setRadiusY(13);
     }
     public void abort(){
         root.getChildren().remove(this.el);

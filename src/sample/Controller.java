@@ -5,8 +5,9 @@ public class Controller {
         abort();
         Random random=new Random();
         for(int i=0;i<Model.count;i++){
-            Model.containers.add(new CockroachContainer(new Cockroach("tarakan "+i,40+i*30,1+random.nextInt(6))));
+            Model.containers.add(new CockroachContainer(new Cockroach("tarakan "+i,40+i*30,2+random.nextInt(9))));
         }
+        View.init();
     }
     public static void start(){
         for(AnimalContainer t:Model.containers) t.start();
