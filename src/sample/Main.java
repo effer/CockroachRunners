@@ -17,15 +17,16 @@ public class Main extends Application {
 
         Button btn=new Button("Create");
         Button startBtn=new Button("start");
-        Button abort=new Button("abort");
-        abort.setLayoutX(220);
         startBtn.setLayoutX(150);
         startBtn.setOnAction(event->{
 
             Controller.start();
         });
         btn.setOnAction(event->{
+            if(Model.abortFlag){
+                Controller.abort();
 
+            }
             Controller.init();
             at=new AnimationTimer() {
                 @Override
@@ -37,13 +38,10 @@ public class Main extends Application {
             at.start();
 
         });
-        abort.setOnAction(event->{
-            Controller.abort();
-        });
+
 
         root.getChildren().add(btn);
         root.getChildren().add(startBtn);
-        root.getChildren().add(abort);
         primaryStage.setTitle("cockroach runners");
         primaryStage.setScene(new Scene(root, 900, 875));
         primaryStage.show();

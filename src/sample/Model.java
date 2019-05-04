@@ -9,4 +9,5 @@ public class Model {
         for(AnimalContainer t:containers)res=res&&t.isFinished();
         return res;
     }
+    public static boolean abortFlag=false;
 }

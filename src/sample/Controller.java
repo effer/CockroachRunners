@@ -13,6 +13,7 @@ public class Controller {
     }
     public static void abort(){
         for(AnimalContainer t:Model.containers)t.abort();
+        Model.abortFlag=false;
     }
 
 }
