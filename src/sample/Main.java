@@ -7,7 +7,6 @@ import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.animation.AnimationTimer;
 public class Main extends Application {
-    public static int count=15;
     private AnimationTimer at;
     public static Group root=new Group();
 
@@ -53,11 +52,11 @@ public class Main extends Application {
             System.out.println("nuzhen argument");
             System.exit(0);
         }
-        try{count=Integer.parseInt(args[0]);}
+        try{Model.count=Integer.parseInt(args[0]);}
         catch(Exception ex){
             System.out.println("Nado vvesti chislo");
         }
-        if(count==0)System.exit(0);
+        if(Model.count==0)System.exit(0);
         launch(args);
     }
 }

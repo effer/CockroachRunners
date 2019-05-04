@@ -8,9 +8,10 @@ public class View {
     private static TextField[] tfs;
     private static Label[] lbs;
     public static void init(){
-        tfs=new TextField[Main.count];
-        lbs=new Label[Main.count];
+        tfs=new TextField[Model.count];
+        lbs=new Label[Model.count];
         System.gc();
+        for(int i=0;i<Model.count;)
         Main.root.getChildren().addAll(tfs);
         Main.root.getChildren().addAll(lbs);
 
