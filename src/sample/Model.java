@@ -1,6 +1,8 @@
 package sample;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Model {
     public static int count;
@@ -11,4 +13,5 @@ public class Model {
         return res;
     }
     public static boolean abortFlag=false;
+    public static Map<String,Integer> statusMap =new TreeMap<>();
 }

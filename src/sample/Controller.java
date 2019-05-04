@@ -21,7 +21,7 @@ public class Controller {
 
     }
     public static void printResult(){
-        for(String t:View.result)System.out.println(t);
+        for(String t:Model.statusMap.keySet())System.out.println(Model.statusMap.get(t));
     }
 
 }

@@ -10,7 +10,7 @@ public class View {
     public static void draw(){
         if(Model.containers!=null)for(AnimalContainer t:Model.containers){
             t.draw();
-            if(t.isFinished()){result.add(i+"прибежал "+t.getAnimal().getName());i++;}
+            Model.statusMap.put(t.getAnimal().getName(),t.getAnimal().getX());
         }
     }
     public static TextField[] tfs;
