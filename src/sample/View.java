@@ -5,7 +5,20 @@ import javafx.scene.control.Label;
 import javafx.scene.shape.Line;
 import java.util.Set;
 import java.util.TreeSet;
+import javafx.animation.AnimationTimer;
 public class View {
+    public static AnimationTimer at=new AnimationTimer() {
+        @Override
+        public void handle(long now) {
+            if(Model.isAllFinished()){
+                stop();
+                Model.abortFlag=false;
+                Controller.printResult();
+                Model.runNumber++;
+            }
+            View.draw();
+        }
+    };;
     private static int i;
     public static Set<String> result=new TreeSet<>();
     public static void draw(){

@@ -15,19 +15,6 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         CockroachDrawer.setContext(root);
         Controller.init();
-        at=new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-                if(Model.isAllFinished()){
-                    stop();
-                    Model.abortFlag=false;
-                    Controller.printResult();
-                    Model.runNumber++;
-                }
-                View.draw();
-            }
-        };
-        at.start();
         Button btn=new Button("Create");
         Button startBtn=new Button("start");
         startBtn.setLayoutX(150);
@@ -43,25 +30,11 @@ public class Main extends Application {
                 Model.runNumber++;
             }
             Controller.init();
-        /*    at=new AnimationTimer() {
-                @Override
-                public void handle(long now) {
-                    if(Model.isAllFinished()){
-                        stop();
-                        Model.abortFlag=false;
-                        Controller.printResult();
-                    }
-                    View.draw();
-                }
-            };*/
-            at.start();
+
 
         });
         ScrollPane sc=new ScrollPane(root);
         Scene scene=new Scene(sc,900,875);
-        scene.setOnMouseClicked(event->{
-            System.out.println("цлицк");
-        });
         root.getChildren().add(btn);
         root.getChildren().add(startBtn);
         primaryStage.setTitle("cockroach runners");

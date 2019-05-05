@@ -9,7 +9,7 @@ public class Controller {
         }
         for(AnimalContainer t:Model.containers )Model.nameSet.add(t.getAnimal().getName());
         View.init();
-
+        View.at.start();
     }
     public static void start(){
         if(!Model.abortFlag) {
