@@ -9,4 +9,5 @@ public interface AnimalContainer extends Runnable{
     public void draw();
     public Animal getAnimal();
     public void abort();
+    int getIndex();
 }

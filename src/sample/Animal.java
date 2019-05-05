@@ -7,4 +7,5 @@ public interface Animal {
     String getName();
     public void setX(int x);
     void setName(String name);
+
 }

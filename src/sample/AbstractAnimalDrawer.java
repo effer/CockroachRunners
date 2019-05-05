@@ -8,4 +8,5 @@ abstract public class AbstractAnimalDrawer implements AnimalDrawer{
         root=group;
     }
     abstract public void abort();
+    abstract public boolean boostFlag();
 }

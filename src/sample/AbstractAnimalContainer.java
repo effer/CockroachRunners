@@ -8,6 +8,8 @@ abstract public class AbstractAnimalContainer implements AnimalContainer {
     protected boolean running=false;
     protected int step;
     protected int distance;
+    protected int index;
+    public int getIndex(){return this.index;}
     abstract public void run();
     public void start(){
         this.running=true;

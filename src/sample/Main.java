@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.animation.AnimationTimer;
+import javafx.scene.control.ScrollPane;
 public class Main extends Application {
     private AnimationTimer at;
     public static Group root=new Group();
@@ -21,6 +22,7 @@ public class Main extends Application {
                     stop();
                     Model.abortFlag=false;
                     Controller.printResult();
+                    Model.runNumber++;
                 }
                 View.draw();
             }
@@ -30,13 +32,16 @@ public class Main extends Application {
         Button startBtn=new Button("start");
         startBtn.setLayoutX(150);
         startBtn.setOnAction(event->{
-            System.out.println("старт");
             Controller.start();
             Model.abortFlag=true;
         });
+
         btn.setOnAction(event->{
 
-            if(Model.abortFlag)System.out.println("забег прерван");
+            if(Model.abortFlag){
+                System.out.println("забег "+Model.runNumber+" прерван");
+                Model.runNumber++;
+            }
             Controller.init();
         /*    at=new AnimationTimer() {
                 @Override
@@ -52,12 +57,15 @@ public class Main extends Application {
             at.start();
 
         });
-
-
+        ScrollPane sc=new ScrollPane(root);
+        Scene scene=new Scene(sc,900,875);
+        scene.setOnMouseClicked(event->{
+            System.out.println("цлицк");
+        });
         root.getChildren().add(btn);
         root.getChildren().add(startBtn);
         primaryStage.setTitle("cockroach runners");
-        primaryStage.setScene(new Scene(root, 900, 875));
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
