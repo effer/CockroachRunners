@@ -5,10 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
-import javafx.animation.AnimationTimer;
 import javafx.scene.control.ScrollPane;
 public class Main extends Application {
-    private AnimationTimer at;
     public static Group root=new Group();
 
     @Override

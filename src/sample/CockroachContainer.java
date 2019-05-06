@@ -7,6 +7,7 @@ public class CockroachContainer extends AbstractAnimalContainer {
         this.drawer=new CockroachDrawer();
         this.distance=500;
         this.step=2;
+        this.finished=false;
     }
     public void run(){
         while((this.animal.getX()<this.distance)&&!this.finished){
@@ -18,13 +19,13 @@ public class CockroachContainer extends AbstractAnimalContainer {
             catch (Exception ex){
                 System.out.println("oshibka timera");
             }
-            if(this.drawer.boostFlag())this.boost();
+            if(this.drawer.boostFlag())this.boost();//если 2 раза кликнули, ускорить
         }
-        this.finished=true;
+        if(!this.abortFlag)this.finished=true;
 
     }
     public void boost(){
-        if(this.animal.getX()+70*this.step<this.distance)this.animal.setX(this.animal.getX()+70*this.step);
+        if(this.animal.getX()+90*this.step<this.distance)this.animal.setX(this.animal.getX()+90*this.step);
         else this.animal.setX(this.distance);
     }
 

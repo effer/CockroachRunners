@@ -2,6 +2,7 @@ package sample;
 import javafx.scene.Group;
 abstract public class AbstractAnimalContainer implements AnimalContainer {
     private Thread thread;
+    protected boolean abortFlag=false;
     protected Animal animal;
     protected AnimalDrawer drawer;
     protected boolean finished=false;
@@ -15,6 +16,7 @@ abstract public class AbstractAnimalContainer implements AnimalContainer {
         this.running=true;
         if(thread==null){
             thread=new Thread(this);
+            this.finished=false;
             thread.start();
         }
     }
@@ -26,7 +28,8 @@ abstract public class AbstractAnimalContainer implements AnimalContainer {
     public boolean isRunning(){return this.running;}
     public Animal getAnimal(){return this.animal;}
     public void abort(){
-        this.finished=true;
+        this.finished=false;
+        this.abortFlag=true;
         this.drawer.abort();
     }
 

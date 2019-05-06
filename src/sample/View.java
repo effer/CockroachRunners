@@ -1,5 +1,4 @@
 package sample;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Line;
@@ -19,7 +18,8 @@ public class View {
             View.draw();
         }
     };;
-    private static int i;
+    private static int i=1;
+    public static void resetI(){i=1;}
     public static Set<String> result=new TreeSet<>();
     public static void draw(){
         if(Model.containers!=null)for(AnimalContainer t:Model.containers){
@@ -30,7 +30,8 @@ public class View {
                 Model.nameSet.add(tfs[t.getIndex()].getText());//добавляем новое имя в множество имен
                 lbs[t.getIndex()].setText(t.getAnimal().getName());
             }
-            Model.statusMap.put(t.getAnimal().getName(),t.getAnimal().getX());
+
+
         }
     }
     public static TextField[] tfs;
