@@ -32,7 +32,7 @@ public class Observer implements Runnable {
         this.flag=false;
         this.result=null;
         Model.abortFlag=false;
-        Model.runNumber++;
+      //  Model.runNumber++;
         Controller.readyToStart=false;
     }
     public void abort(){

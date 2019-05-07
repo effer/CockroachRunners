@@ -11,7 +11,7 @@ public class Controller {
         Random random=new Random();
         Model.containers.clear();
         for(int i=0;i<Model.count;i++){
-            Model.containers.add(new CockroachContainer(i,new Cockroach("таракан "+i,40+i*30,15+random.nextInt(35))));
+            Model.containers.add(new CockroachContainer(i,new Cockroach("таракан "+(i+1),40+i*30,15+random.nextInt(35))));
         }
         for(AnimalContainer t:Model.containers )Model.nameSet.add(t.getAnimal().getName());
         View.init();
