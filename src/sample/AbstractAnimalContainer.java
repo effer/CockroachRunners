@@ -10,6 +10,7 @@ abstract public class AbstractAnimalContainer implements AnimalContainer {
     protected int step;
     protected int distance;
     protected int index;
+    protected int boostCoefficient;
     public int getIndex(){return this.index;}
     abstract public void run();
     public void start(){

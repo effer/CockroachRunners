@@ -8,6 +8,7 @@ public class CockroachContainer extends AbstractAnimalContainer {
         this.distance=500;
         this.step=2;
         this.finished=false;
+        this.boostCoefficient=100;
     }
     public void run(){
         while((this.animal.getX()<this.distance)&&!this.finished){
@@ -25,7 +26,7 @@ public class CockroachContainer extends AbstractAnimalContainer {
 
     }
     public void boost(){
-        if(this.animal.getX()+90*this.step<this.distance)this.animal.setX(this.animal.getX()+90*this.step);
+        if(this.animal.getX()+this.boostCoefficient*this.step<this.distance)this.animal.setX(this.animal.getX()+this.boostCoefficient*this.step);
         else this.animal.setX(this.distance);
     }
 
